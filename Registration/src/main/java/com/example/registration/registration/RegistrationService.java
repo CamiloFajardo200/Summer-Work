@@ -1,6 +1,7 @@
 package com.example.registration.registration;
 
 import com.example.registration.appuser.AppUser;
+import com.example.registration.appuser.AppUserRole;
 import com.example.registration.appuser.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,12 @@ public class RegistrationService {
         }
         return appUserService.singUpUser(
                 new AppUser(
-                        
+                        request.getFirstName(),
+                        request.getLastName(),
+                        request.getEmail(),
+                        request.getPassword(),
+                        AppUserRole.USER
+
                 )
         );
     }
