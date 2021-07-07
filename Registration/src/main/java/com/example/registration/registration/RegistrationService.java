@@ -25,7 +25,7 @@ public class RegistrationService {
                         request.getGroup(),
                         request.getEmail(),
                         request.getPassword(),
-                        request.getDateOfBirth(),
+                        request.getDateofbirth(),
                         AppUserRole.request.getRole()
 
                 )
