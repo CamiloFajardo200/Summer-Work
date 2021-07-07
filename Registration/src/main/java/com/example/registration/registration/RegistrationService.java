@@ -21,10 +21,11 @@ public class RegistrationService {
         }
         return appUserService.singUpUser(
                 new AppUser(
-                        request.getFirstName(),
-                        request.getLastName(),
+                        request.getUsername(),
+                        request.getGroup(),
                         request.getEmail(),
                         request.getPassword(),
+                        request.getDateOfBirth(),
                         AppUserRole.request.getRole()
 
                 )
