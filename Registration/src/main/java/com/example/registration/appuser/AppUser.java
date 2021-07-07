@@ -22,17 +22,18 @@ public class AppUser implements UserDetails {
 
     @Id
     @SequenceGenerator(
-            name = "student_sequence",
-            sequenceName = "student_sequence",
+            name = "user_sequence",
+            sequenceName = "user_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "student_sequence"
+            generator = "user_sequence"
     )
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String username;
+    private String group;
+    private String dateofbirth;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
@@ -40,9 +41,10 @@ public class AppUser implements UserDetails {
     private Boolean locked;
     private Boolean enabled;
 
-    public AppUser(String firstName, String lastName, String email, String password, AppUserRole appUserRole) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public AppUser(String username, String group,String dateofbirth, String email, String password, AppUserRole appUserRole) {
+        this.firstName = username;
+        this.lastName = group;
+        this.dateofbirth = dateofbirth;
         this.email = email;
         this.password = password;
         this.appUserRole = appUserRole;
@@ -62,16 +64,9 @@ public class AppUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
 
     @Override
     public boolean isAccountNonExpired() {
