@@ -1,4 +1,4 @@
-package com.example.registration.registration;
+package com.example.registration.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
